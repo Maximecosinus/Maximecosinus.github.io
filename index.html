@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cosinus — Math & science tutoring in Scarborough and online</title>
+<meta name="description" content="Bilingual tutoring in math, physics, chemistry and coding, from elementary school to first-year university. In Scarborough or online. First session free.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 40'%3E%3Cpath d='M4 10 C16 10 20 34 32 34 C44 34 48 7 58 6' stroke='%232457E6' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='58.5' cy='6' r='5.5' fill='%23FB923C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F1E45; --blue:#2457E6; --mist:#EEF2FD; --orange:#FB923C;
+  --slate:#4A5878; --paper:#FFFFFF; --grid:#E3E9F8;
+  --display:'Space Grotesk', 'Helvetica Neue', sans-serif;
+  --body:'IBM Plex Sans', 'Helvetica Neue', sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--navy);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-0.025em;margin:0}
+h2{font-size:clamp(32px,4.5vw,48px)}
+h3{font-size:22px;letter-spacing:-0.01em}
+
+/* Header */
+.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--grid)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy)}
+.brand b{font-family:var(--display);font-size:26px;letter-spacing:-0.02em}
+nav{display:flex;align-items:center;gap:22px}
+nav a{color:var(--navy);text-decoration:none;font-weight:500;font-size:16px}
+nav a:hover{color:var(--blue)}
+.lang{display:inline-flex;border:2px solid var(--navy);border-radius:999px;overflow:hidden}
+.lang button{font:700 15px var(--display);border:0;background:transparent;color:var(--navy);padding:8px 14px;cursor:pointer;min-height:40px}
+.lang button[aria-pressed="true"]{background:var(--navy);color:#fff}
+
+/* Hero */
+.hero{padding:72px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:center}
+.hero h1{font-size:clamp(46px,7.4vw,92px);letter-spacing:-0.035em;text-wrap:balance}
+.hero .sub{font-size:20px;color:var(--slate);max-width:34em;margin:24px 0 32px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:14px;font:600 17px var(--body);text-decoration:none}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.primary:hover{background:#1A44C2}
+.btn.ghost{border:2px solid var(--navy);color:var(--navy)}
+.btn.ghost:hover{background:var(--mist)}
+.note{font-size:15px;color:var(--slate);margin-top:16px}
+.graph{width:100%;height:auto;display:block}
+.curve{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.8s .3s cubic-bezier(.6,0,.2,1) forwards}
+.dot{opacity:0;animation:pop .35s 2s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.curve{animation:none;stroke-dashoffset:0}.dot{animation:none;opacity:1}html{scroll-behavior:auto}}
+
+/* Sections */
+section{padding:72px 0}
+.band{background:var(--mist)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+.lead{font-size:19px;color:var(--slate);max-width:36em;margin:16px 0 0}
+.list{list-style:none;margin:28px 0 0;padding:0;border-top:2px solid var(--navy)}
+.list li{padding:18px 0;border-bottom:1px solid #C9D4F2}
+.list strong{display:block;font-family:var(--display);font-size:21px;font-weight:700}
+.list span{color:var(--slate);font-size:17px}
+.levels{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.levels li{display:flex;align-items:baseline;gap:14px;font-size:19px}
+.levels li::before{content:"";flex:none;width:12px;height:12px;border-radius:50%;background:var(--orange);transform:translateY(-2px)}
+.levels small{color:var(--slate);font-size:16px}
+
+.facts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.facts li{padding-left:20px;border-left:3px solid var(--blue);font-size:17px}
+
+.steps{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;counter-reset:s}
+.steps li{counter-increment:s}
+.steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:2px solid var(--navy);font:700 20px var(--display);margin-bottom:16px}
+.steps p{color:var(--slate);margin:8px 0 0;font-size:17px}
+
+.price{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+.from{font-family:var(--display);font-size:clamp(48px,7vw,80px);font-weight:700;letter-spacing:-0.03em;line-height:1;margin:20px 0 0}
+.from small{font-size:.4em;font-weight:500;color:var(--slate);letter-spacing:0}
+.formats{list-style:none;margin:0;padding:0;border-top:2px solid var(--navy)}
+.formats li{padding:18px 0;border-bottom:1px solid #C9D4F2}
+.formats strong{display:block;font-size:19px}
+.formats span{color:var(--slate);font-size:16px}
+.fine{font-size:16px;color:var(--slate);margin:20px 0 0}
+
+details{border-bottom:1px solid #C9D4F2;padding:4px 0}
+details:first-of-type{border-top:2px solid var(--navy);margin-top:28px}
+summary{cursor:pointer;list-style:none;font-weight:600;font-size:19px;padding:16px 36px 16px 0;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:12px;font:500 28px var(--display);color:var(--blue)}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 18px;color:var(--slate);max-width:44em}
+
+.contact{background:var(--navy);color:#fff}
+.contact .lead{color:#C9D4F2}
+.contact .btn.primary{background:var(--orange);color:var(--navy)}
+.contact .btn.primary:hover{background:#FDBA74}
+.contact .btn.ghost{border-color:#fff;color:#fff}
+.contact .btn.ghost:hover{background:rgba(255,255,255,.08)}
+.contact .mail{color:#C9D4F2;margin-top:18px;font-size:16px}
+.contact .mail a{color:#fff}
+
+footer{padding:28px 0;font-size:15px;color:var(--slate)}
+
+@media (max-width:860px){
+  nav a{display:none}
+  .hero{padding:48px 0}
+  .hero .wrap,.split,.price{grid-template-columns:1fr;gap:36px}
+  .steps{grid-template-columns:1fr;gap:28px}
+  section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Cosinus">
+      <svg width="44" height="28" viewBox="0 0 64 40" fill="none" aria-hidden="true"><path d="M4 10 C 16 10, 20 34, 32 34 C 44 34, 48 7, 58 6" stroke="#2457E6" stroke-width="5.5" stroke-linecap="round"></path><circle cx="58.5" cy="6" r="5.5" fill="#FB923C"></circle></svg>
+      <b>cosinus</b>
+    </a>
+    <nav aria-label="Main">
+      <a href="#subjects" data-en="Subjects" data-fr="Matières">Subjects</a>
+      <a href="#how" data-en="How it works" data-fr="Fonctionnement">How it works</a>
+      <a href="#pricing" data-en="Pricing" data-fr="Tarifs">Pricing</a>
+      <a href="#contact" data-en="Contact" data-fr="Contact">Contact</a>
+      <div class="lang" role="group" aria-label="Language / Langue">
+        <button type="button" data-set="en" aria-pressed="true">EN</button>
+        <button type="button" data-set="fr" aria-pressed="false">FR</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1 data-en="Math finally makes sense." data-fr="Les maths, enfin claires.">Math finally makes sense.</h1>
+      <p class="sub" data-en="Patient, bilingual tutoring in math, physics, chemistry and coding, from elementary school to first-year university. In Scarborough or online." data-fr="Un tutorat patient et bilingue en maths, physique, chimie et programmation, du primaire à la première année universitaire. À Scarborough ou en ligne.">Patient, bilingual tutoring in math, physics, chemistry and coding, from elementary school to first-year university. In Scarborough or online.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact" data-en="Book a free trial session" data-fr="Réserver une séance d'essai gratuite">Book a free trial session</a>
+        <a class="btn ghost" href="tel:+14185205415" data-en="Call (418) 520-5415" data-fr="Appeler le (418) 520-5415">Call (418) 520-5415</a>
+      </div>
+      <p class="note" data-en="The first 30-minute session is free, with no commitment." data-fr="La première séance de 30 minutes est gratuite et sans engagement.">The first 30-minute session is free, with no commitment.</p>
+    </div>
+    <svg class="graph" viewBox="0 0 460 320" fill="none" role="img" aria-label="A cosine curve rising to a high point">
+      <g stroke="#E3E9F8" stroke-width="1">
+        <path d="M0 40H460M0 80H460M0 120H460M0 160H460M0 200H460M0 240H460M0 280H460"></path>
+        <path d="M40 0V320M100 0V320M160 0V320M220 0V320M280 0V320M340 0V320M400 0V320"></path>
+      </g>
+      <path d="M20 300H450M40 310V10" stroke="#8A96B3" stroke-width="1.5"></path>
+      <path class="curve" pathLength="1" d="M40 90 C 120 90, 150 270, 230 270 C 310 270, 340 70, 420 52" stroke="#2457E6" stroke-width="10" stroke-linecap="round"></path>
+      <circle class="dot" cx="421" cy="52" r="13" fill="#FB923C"></circle>
+    </svg>
+  </div>
+</section>
+
+<section id="subjects" class="band">
+  <div class="wrap split">
+    <div>
+      <h2 data-en="What we work on" data-fr="Les matières">What we work on</h2>
+      <ul class="list">
+        <li><strong data-en="Math" data-fr="Mathématiques">Math</strong><span data-en="From fractions to calculus, including Ontario's Advanced Functions and Calculus & Vectors." data-fr="Des fractions au calcul différentiel, y compris Advanced Functions et Calculus & Vectors en Ontario.">From fractions to calculus, including Ontario's Advanced Functions and Calculus & Vectors.</span></li>
+        <li><strong data-en="Physics" data-fr="Physique">Physics</strong><span data-en="Mechanics, electricity and waves, with the math behind them made clear." data-fr="Mécanique, électricité et ondes, avec les maths qui les expliquent.">Mechanics, electricity and waves, with the math behind them made clear.</span></li>
+        <li><strong data-en="Chemistry" data-fr="Chimie">Chemistry</strong><span data-en="Core concepts and problem solving for high school chemistry." data-fr="Les notions clés et la résolution de problèmes au secondaire.">Core concepts and problem solving for high school chemistry.</span></li>
+        <li><strong data-en="Coding" data-fr="Programmation">Coding</strong><span data-en="First steps in Python and Java, and how to think like a programmer." data-fr="Premiers pas en Python et en Java, et la logique de programmation.">First steps in Python and Java, and how to think like a programmer.</span></li>
+      </ul>
+    </div>
+    <div>
+      <h2 data-en="Every level" data-fr="Tous les niveaux">Every level</h2>
+      <ul class="levels">
+        <li><span data-en="Elementary school" data-fr="Primaire">Elementary school</span></li>
+        <li><span><span data-en="High school" data-fr="Secondaire">High school</span><br><small data-en="Ontario curriculum, French-language and immersion programs" data-fr="Programme de l'Ontario, écoles francophones et immersion">Ontario curriculum, French-language and immersion programs</small></span></li>
+        <li><span><span data-en="Cégep" data-fr="Cégep">Cégep</span><br><small data-en="Online, in French" data-fr="En ligne, en français">Online, in French</small></span></li>
+        <li><span data-en="First-year university" data-fr="Première année universitaire">First-year university</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <h2 data-en="Your tutor" data-fr="Votre tuteur">Your tutor</h2>
+      <p class="lead" data-en="I'm Maxime. I trained in MPSI preparatory classes, two years of intensive math and physics in the French system, then studied computer science at university. I teach in English or French, and I take the time to explain each idea until it clicks." data-fr="Je m'appelle Maxime. J'ai suivi les classes préparatoires MPSI, deux ans de maths et de physique intensives dans le système français, puis j'ai étudié l'informatique à l'université. J'enseigne en anglais ou en français, et je prends le temps d'expliquer chaque notion jusqu'à ce qu'elle soit comprise.">I'm Maxime. I trained in MPSI preparatory classes, two years of intensive math and physics in the French system, then studied computer science at university. I teach in English or French, and I take the time to explain each idea until it clicks.</p>
+    </div>
+    <ul class="facts">
+      <li data-en="My studies were evaluated by WES as three years of Canadian undergraduate study, with a 3.60 GPA." data-fr="Mes études ont été évaluées par WES comme trois années de premier cycle canadien, avec une moyenne de 3,60.">My studies were evaluated by WES as three years of Canadian undergraduate study, with a 3.60 GPA.</li>
+      <li data-en="I taught computer skills to groups of more than 30 people as a volunteer trainer." data-fr="J'ai enseigné l'informatique à des groupes de plus de 30 personnes comme formateur bénévole.">I taught computer skills to groups of more than 30 people as a volunteer trainer.</li>
+      <li data-en="French is my first language, so French-language and immersion students feel at home." data-fr="Le français est ma langue maternelle : les élèves des écoles francophones et d'immersion sont chez eux.">French is my first language, so French-language and immersion students feel at home.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="how" class="band">
+  <div class="wrap">
+    <h2 data-en="How it works" data-fr="Comment ça marche">How it works</h2>
+    <ol class="steps">
+      <li><h3 data-en="Get in touch" data-fr="Prenez contact">Get in touch</h3><p data-en="Call or email with the level and what your child is working on." data-fr="Appelez ou écrivez en précisant le niveau et la matière.">Call or email with the level and what your child is working on.</p></li>
+      <li><h3 data-en="Free trial session" data-fr="Séance d'essai gratuite">Free trial session</h3><p data-en="Thirty minutes to find the gaps and see if we work well together." data-fr="Trente minutes pour repérer les difficultés et voir si nous travaillons bien ensemble.">Thirty minutes to find the gaps and see if we work well together.</p></li>
+      <li><h3 data-en="A plan, week by week" data-fr="Un plan, semaine après semaine">A plan, week by week</h3><p data-en="Regular sessions aimed at the next test and at understanding that lasts." data-fr="Des séances régulières, centrées sur le prochain examen et sur une compréhension durable.">Regular sessions aimed at the next test and at understanding that lasts.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap price">
+    <div>
+      <h2 data-en="Pricing" data-fr="Tarifs">Pricing</h2>
+      <p class="from"><span data-en="From $25" data-fr="Dès 25 $">From $25</span> <small data-en="per hour" data-fr="de l'heure">per hour</small></p>
+    </div>
+    <div>
+      <ul class="formats">
+        <li><strong data-en="Individual sessions" data-fr="Séances individuelles">Individual sessions</strong><span data-en="In person in Scarborough or online." data-fr="En personne à Scarborough ou en ligne.">In person in Scarborough or online.</span></li>
+        <li><strong data-en="Small groups of 3 to 5 students" data-fr="Petits groupes de 3 à 5 élèves">Small groups of 3 to 5 students</strong><span data-en="A lower price per student, ideal before a test." data-fr="Un prix réduit par élève, idéal avant un examen.">A lower price per student, ideal before a test.</span></li>
+        <li><strong data-en="Monthly package of 4 sessions" data-fr="Forfait mensuel de 4 séances">Monthly package of 4 sessions</strong><span data-en="A small discount for regular weekly work." data-fr="Une petite réduction pour un suivi chaque semaine.">A small discount for regular weekly work.</span></li>
+      </ul>
+      <p class="fine" data-en="Your first 30-minute session is free. Prepaid sessions you don't use are refunded. Ask for the rate that fits your situation." data-fr="La première séance de 30 minutes est gratuite. Les séances prépayées non utilisées sont remboursées. Demandez le tarif adapté à votre situation.">Your first 30-minute session is free. Prepaid sessions you don't use are refunded. Ask for the rate that fits your situation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2 data-en="Questions" data-fr="Questions fréquentes">Questions</h2>
+    <details>
+      <summary data-en="Can lessons be entirely in French?" data-fr="Les cours peuvent-ils être entièrement en français ?">Can lessons be entirely in French?</summary>
+      <p data-en="Yes. Lessons can be in French, in English, or a mix of both, whatever helps your child most." data-fr="Oui. En français, en anglais ou un mélange des deux, selon ce qui aide le plus votre enfant.">Yes. Lessons can be in French, in English, or a mix of both, whatever helps your child most.</p>
+    </details>
+    <details>
+      <summary data-en="Where do sessions take place?" data-fr="Où se déroulent les séances ?">Where do sessions take place?</summary>
+      <p data-en="In person in Scarborough, at a library or another public place, or online by video." data-fr="En personne à Scarborough, dans une bibliothèque ou un autre lieu public, ou en ligne par vidéo.">In person in Scarborough, at a library or another public place, or online by video.</p>
+    </details>
+    <details>
+      <summary data-en="Do you follow the Ontario curriculum?" data-fr="Suivez-vous le programme de l'Ontario ?">Do you follow the Ontario curriculum?</summary>
+      <p data-en="Yes, including French-language and immersion programs. Cégep students in Quebec can work with me online." data-fr="Oui, y compris les programmes francophones et d'immersion. Les cégépiens du Québec peuvent travailler avec moi en ligne.">Yes, including French-language and immersion programs. Cégep students in Quebec can work with me online.</p>
+    </details>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2 data-en="Book your free trial session" data-fr="Réservez votre séance d'essai gratuite">Book your free trial session</h2>
+    <p class="lead" data-en="Tell me the level and the subject, and I'll get back to you quickly." data-fr="Indiquez-moi le niveau et la matière, et je vous réponds rapidement.">Tell me the level and the subject, and I'll get back to you quickly.</p>
+    <div class="actions" style="margin-top:28px">
+      <a class="btn primary" href="tel:+14185205415" data-en="Call (418) 520-5415" data-fr="Appeler le (418) 520-5415">Call (418) 520-5415</a>
+      <a class="btn ghost" href="mailto:bangakollomaxime@gmail.com?subject=Cosinus%20-%20Free%20trial%20session" data-en="Send an email" data-fr="Envoyer un courriel">Send an email</a>
+    </div>
+    <p class="mail"><a href="mailto:bangakollomaxime@gmail.com">bangakollomaxime@gmail.com</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap" data-en="© 2026 Cosinus, tutoring by Maxime Richelieu Banga Kollo, Scarborough, Ontario." data-fr="© 2026 Cosinus, tutorat par Maxime Richelieu Banga Kollo, Scarborough, Ontario.">© 2026 Cosinus, tutoring by Maxime Richelieu Banga Kollo, Scarborough, Ontario.</div>
+</footer>
+
+<script>
+(function(){
+  var buttons = document.querySelectorAll('.lang button');
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      var t = el.getAttribute('data-' + lang);
+      if (t !== null) el.textContent = t;
+    });
+    buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.set === lang)); });
+  }
+  buttons.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.set); }); });
+  var pref = (navigator.language || 'en').toLowerCase();
+  if (pref.indexOf('fr') === 0) setLang('fr');
+})();
+</script>
+</body>
+</html>
